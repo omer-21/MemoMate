@@ -49,9 +49,9 @@
             this.homepage = new NoteTaker.Homepage();
             this.textNotesForm = new NoteTaker.TextNotesForm();
             this.videosForm = new NoteTaker.VideosForm();
-            this.alarmsForm= new NoteTaker.AlarmsForm();
-            this.recycleBinForm= new NoteTaker.RecycleBinForm();
-            this.imagesForm= new NoteTaker.ImagesForm();
+            this.alarmsForm = new NoteTaker.AlarmsForm();
+            this.recycleBinForm = new NoteTaker.RecycleBinForm();
+            this.imagesForm = new NoteTaker.ImagesForm();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
             this.recycleBinButton.ForeColor = System.Drawing.Color.White;
             this.recycleBinButton.Image = ((System.Drawing.Image)(resources.GetObject("recycleBinButton.Image")));
             this.recycleBinButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recycleBinButton.Location = new System.Drawing.Point(12, 326);
+            this.recycleBinButton.Location = new System.Drawing.Point(10, 343);
             this.recycleBinButton.Name = "recycleBinButton";
             this.recycleBinButton.Size = new System.Drawing.Size(197, 54);
             this.recycleBinButton.TabIndex = 4;
@@ -107,7 +107,7 @@
             this.alarmsButton.ForeColor = System.Drawing.Color.White;
             this.alarmsButton.Image = ((System.Drawing.Image)(resources.GetObject("alarmsButton.Image")));
             this.alarmsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.alarmsButton.Location = new System.Drawing.Point(13, 275);
+            this.alarmsButton.Location = new System.Drawing.Point(10, 287);
             this.alarmsButton.Name = "alarmsButton";
             this.alarmsButton.Size = new System.Drawing.Size(197, 54);
             this.alarmsButton.TabIndex = 4;
@@ -141,7 +141,7 @@
             this.videosButton.ForeColor = System.Drawing.Color.White;
             this.videosButton.Image = ((System.Drawing.Image)(resources.GetObject("videosButton.Image")));
             this.videosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.videosButton.Location = new System.Drawing.Point(10, 167);
+            this.videosButton.Location = new System.Drawing.Point(10, 170);
             this.videosButton.Name = "videosButton";
             this.videosButton.Size = new System.Drawing.Size(197, 54);
             this.videosButton.TabIndex = 4;
@@ -173,7 +173,7 @@
             this.textNotsButton.ForeColor = System.Drawing.Color.White;
             this.textNotsButton.Image = ((System.Drawing.Image)(resources.GetObject("textNotsButton.Image")));
             this.textNotsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.textNotsButton.Location = new System.Drawing.Point(12, 113);
+            this.textNotsButton.Location = new System.Drawing.Point(12, 115);
             this.textNotsButton.Name = "textNotsButton";
             this.textNotsButton.Size = new System.Drawing.Size(197, 54);
             this.textNotsButton.TabIndex = 4;
@@ -316,12 +316,40 @@
             this.homepage.Size = new System.Drawing.Size(805, 423);
             this.homepage.TabIndex = 5;
             // 
-            // textnotes
+            // textNotesForm
             // 
             this.textNotesForm.Location = new System.Drawing.Point(215, 156);
             this.textNotesForm.Name = "textNotesForm";
             this.textNotesForm.Size = new System.Drawing.Size(818, 406);
             this.textNotesForm.TabIndex = 6;
+            // 
+            // videosForm
+            // 
+            this.videosForm.Location = new System.Drawing.Point(0, 0);
+            this.videosForm.Name = "videosForm";
+            this.videosForm.Size = new System.Drawing.Size(773, 412);
+            this.videosForm.TabIndex = 0;
+            // 
+            // alarmsForm
+            // 
+            this.alarmsForm.Location = new System.Drawing.Point(0, 0);
+            this.alarmsForm.Name = "alarmsForm";
+            this.alarmsForm.Size = new System.Drawing.Size(695, 422);
+            this.alarmsForm.TabIndex = 0;
+            // 
+            // recycleBinForm
+            // 
+            this.recycleBinForm.Location = new System.Drawing.Point(0, 0);
+            this.recycleBinForm.Name = "recycleBinForm";
+            this.recycleBinForm.Size = new System.Drawing.Size(783, 465);
+            this.recycleBinForm.TabIndex = 0;
+            // 
+            // imagesForm
+            // 
+            this.imagesForm.Location = new System.Drawing.Point(0, 0);
+            this.imagesForm.Name = "imagesForm";
+            this.imagesForm.Size = new System.Drawing.Size(733, 425);
+            this.imagesForm.TabIndex = 0;
             // 
             // label1
             // 
@@ -342,7 +370,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 583);
             this.Controls.Add(this.label1);
-            //this.Controls.Add(this.textnotes);
             this.Controls.Add(this.homepage);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button13);
