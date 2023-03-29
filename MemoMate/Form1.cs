@@ -27,12 +27,36 @@ namespace NoteTaker
             homepage.BringToFront();
         }
 
-        /*private void textNotesB_Click(object sender, EventArgs e)
+        private void textNotesB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = textNotsButton.Height;
             SidePanel.Top = textNotsButton.Top;
-            textnotes.BringToFront();
-        }*/
+            textNotesForm.BringToFront();
+        }
+        private void imagesB_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = imagesButton.Height;
+            SidePanel.Top = imagesButton.Top;
+            imagesForm.BringToFront();
+        }
+        private void videosB_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = videosButton.Height;
+            SidePanel.Top = videosButton.Top;
+            videosForm.BringToFront();
+        }
+        private void alarmsB_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = alarmsButton.Height;
+            SidePanel.Top = alarmsButton.Top;
+            alarmsForm.BringToFront();
+        }
+        private void recycleBinB_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = recycleBinButton.Height;
+            SidePanel.Top = recycleBinButton.Top;
+            recycleBinForm.BringToFront();
+        }
 
         private void label4_Click(object sender, EventArgs e)
         {

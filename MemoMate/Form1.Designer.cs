@@ -34,7 +34,7 @@
             this.recycleBinButton = new System.Windows.Forms.Button();
             this.alarmsButton = new System.Windows.Forms.Button();
             this.imagesButton = new System.Windows.Forms.Button();
-            this.vidoesButton = new System.Windows.Forms.Button();
+            this.videosButton = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.textNotsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
@@ -47,7 +47,11 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.homepage = new NoteTaker.Homepage();
-            //this.textnotes = new NoteTaker.TextNotes();
+            this.textNotesForm = new NoteTaker.TextNotesForm();
+            this.videosForm = new NoteTaker.VideosForm();
+            this.alarmsForm = new NoteTaker.AlarmsForm();
+            this.recycleBinForm = new NoteTaker.RecycleBinForm();
+            this.imagesForm = new NoteTaker.ImagesForm();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +63,7 @@
             this.panel1.Controls.Add(this.recycleBinButton);
             this.panel1.Controls.Add(this.alarmsButton);
             this.panel1.Controls.Add(this.imagesButton);
-            this.panel1.Controls.Add(this.vidoesButton);
+            this.panel1.Controls.Add(this.videosButton);
             this.panel1.Controls.Add(this.button14);
             this.panel1.Controls.Add(this.textNotsButton);
             this.panel1.Controls.Add(this.homeButton);
@@ -86,13 +90,14 @@
             this.recycleBinButton.ForeColor = System.Drawing.Color.White;
             this.recycleBinButton.Image = ((System.Drawing.Image)(resources.GetObject("recycleBinButton.Image")));
             this.recycleBinButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recycleBinButton.Location = new System.Drawing.Point(12, 326);
+            this.recycleBinButton.Location = new System.Drawing.Point(10, 343);
             this.recycleBinButton.Name = "recycleBinButton";
             this.recycleBinButton.Size = new System.Drawing.Size(197, 54);
             this.recycleBinButton.TabIndex = 4;
             this.recycleBinButton.Text = "     Recycle Bin";
             this.recycleBinButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.recycleBinButton.UseVisualStyleBackColor = true;
+            this.recycleBinButton.Click += new System.EventHandler(this.recycleBinB_Click);
             // 
             // alarmsButton
             // 
@@ -102,13 +107,14 @@
             this.alarmsButton.ForeColor = System.Drawing.Color.White;
             this.alarmsButton.Image = ((System.Drawing.Image)(resources.GetObject("alarmsButton.Image")));
             this.alarmsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.alarmsButton.Location = new System.Drawing.Point(13, 275);
+            this.alarmsButton.Location = new System.Drawing.Point(10, 287);
             this.alarmsButton.Name = "alarmsButton";
             this.alarmsButton.Size = new System.Drawing.Size(197, 54);
             this.alarmsButton.TabIndex = 4;
             this.alarmsButton.Text = "          Alarms";
             this.alarmsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.alarmsButton.UseVisualStyleBackColor = true;
+            this.alarmsButton.Click += new System.EventHandler(this.alarmsB_Click);
             // 
             // imagesButton
             // 
@@ -125,22 +131,24 @@
             this.imagesButton.Text = "        Images";
             this.imagesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.imagesButton.UseVisualStyleBackColor = true;
+            this.imagesButton.Click += new System.EventHandler(this.imagesB_Click);
             // 
-            // vidoesButton
+            // videosButton
             // 
-            this.vidoesButton.FlatAppearance.BorderSize = 0;
-            this.vidoesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vidoesButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vidoesButton.ForeColor = System.Drawing.Color.White;
-            this.vidoesButton.Image = ((System.Drawing.Image)(resources.GetObject("vidoesButton.Image")));
-            this.vidoesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vidoesButton.Location = new System.Drawing.Point(10, 167);
-            this.vidoesButton.Name = "vidoesButton";
-            this.vidoesButton.Size = new System.Drawing.Size(197, 54);
-            this.vidoesButton.TabIndex = 4;
-            this.vidoesButton.Text = "        Videos";
-            this.vidoesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.vidoesButton.UseVisualStyleBackColor = true;
+            this.videosButton.FlatAppearance.BorderSize = 0;
+            this.videosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.videosButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.videosButton.ForeColor = System.Drawing.Color.White;
+            this.videosButton.Image = ((System.Drawing.Image)(resources.GetObject("videosButton.Image")));
+            this.videosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.videosButton.Location = new System.Drawing.Point(10, 170);
+            this.videosButton.Name = "videosButton";
+            this.videosButton.Size = new System.Drawing.Size(197, 54);
+            this.videosButton.TabIndex = 4;
+            this.videosButton.Text = "        Videos";
+            this.videosButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.videosButton.UseVisualStyleBackColor = true;
+            this.videosButton.Click += new System.EventHandler(this.videosB_Click);
             // 
             // button14
             // 
@@ -165,14 +173,14 @@
             this.textNotsButton.ForeColor = System.Drawing.Color.White;
             this.textNotsButton.Image = ((System.Drawing.Image)(resources.GetObject("textNotsButton.Image")));
             this.textNotsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.textNotsButton.Location = new System.Drawing.Point(12, 113);
+            this.textNotsButton.Location = new System.Drawing.Point(12, 115);
             this.textNotsButton.Name = "textNotsButton";
             this.textNotsButton.Size = new System.Drawing.Size(197, 54);
             this.textNotsButton.TabIndex = 4;
             this.textNotsButton.Text = "       Text Notes";
             this.textNotsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.textNotsButton.UseVisualStyleBackColor = true;
-            //this.textNotsButton.Click += new System.EventHandler(this.textNotesB_Click);
+            this.textNotsButton.Click += new System.EventHandler(this.textNotesB_Click);
             // 
             // homeButton
             // 
@@ -308,12 +316,40 @@
             this.homepage.Size = new System.Drawing.Size(805, 423);
             this.homepage.TabIndex = 5;
             // 
-            // textnotes
+            // textNotesForm
             // 
-            //this.textnotes.Location = new System.Drawing.Point(215, 156);
-            //this.textnotes.Name = "textnotes";
-            //this.textnotes.Size = new System.Drawing.Size(818, 406);
-            //this.textnotes.TabIndex = 6;
+            this.textNotesForm.Location = new System.Drawing.Point(215, 156);
+            this.textNotesForm.Name = "textNotesForm";
+            this.textNotesForm.Size = new System.Drawing.Size(818, 406);
+            this.textNotesForm.TabIndex = 6;
+            // 
+            // videosForm
+            // 
+            this.videosForm.Location = new System.Drawing.Point(0, 0);
+            this.videosForm.Name = "videosForm";
+            this.videosForm.Size = new System.Drawing.Size(773, 412);
+            this.videosForm.TabIndex = 0;
+            // 
+            // alarmsForm
+            // 
+            this.alarmsForm.Location = new System.Drawing.Point(0, 0);
+            this.alarmsForm.Name = "alarmsForm";
+            this.alarmsForm.Size = new System.Drawing.Size(695, 422);
+            this.alarmsForm.TabIndex = 0;
+            // 
+            // recycleBinForm
+            // 
+            this.recycleBinForm.Location = new System.Drawing.Point(0, 0);
+            this.recycleBinForm.Name = "recycleBinForm";
+            this.recycleBinForm.Size = new System.Drawing.Size(783, 465);
+            this.recycleBinForm.TabIndex = 0;
+            // 
+            // imagesForm
+            // 
+            this.imagesForm.Location = new System.Drawing.Point(0, 0);
+            this.imagesForm.Name = "imagesForm";
+            this.imagesForm.Size = new System.Drawing.Size(733, 425);
+            this.imagesForm.TabIndex = 0;
             // 
             // label1
             // 
@@ -334,7 +370,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 583);
             this.Controls.Add(this.label1);
-            //this.Controls.Add(this.textnotes);
             this.Controls.Add(this.homepage);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button13);
@@ -358,25 +393,29 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button textNotsButton;
-        private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel SidePanel;
+        private System.Windows.Forms.Button alarmsButton;
+        private System.Windows.Forms.Button textNotsButton;
+        private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Button recycleBinButton;
         private System.Windows.Forms.Button imagesButton;
-        private System.Windows.Forms.Button vidoesButton;
+        private System.Windows.Forms.Button videosButton;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private Homepage homepage;
-        //private TextNotes textnotes;
-        private System.Windows.Forms.Button alarmsButton;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private Homepage homepage;
+        private TextNotesForm textNotesForm;
+        private VideosForm videosForm;
+        private ImagesForm imagesForm;
+        private AlarmsForm alarmsForm;
+        private RecycleBinForm recycleBinForm;
     }
 }
 
