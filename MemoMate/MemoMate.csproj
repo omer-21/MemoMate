@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlarmsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlarmsForm.Designer.cs">
+      <DependentUpon>AlarmsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homepage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -57,13 +63,43 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImagesForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImagesForm.Designer.cs">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecycleBinForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecycleBinForm.Designer.cs">
+      <DependentUpon>RecycleBinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextNotesForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextNotesForm.Designer.cs">
+      <DependentUpon>TextNotesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideosForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideosForm.Designer.cs">
+      <DependentUpon>VideosForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AlarmsForm.resx">
+      <DependentUpon>AlarmsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagesForm.resx">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +111,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecycleBinForm.resx">
+      <DependentUpon>RecycleBinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextNotesForm.resx">
+      <DependentUpon>TextNotesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideosForm.resx">
+      <DependentUpon>VideosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
