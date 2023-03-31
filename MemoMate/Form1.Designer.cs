@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SidePanel = new System.Windows.Forms.Panel();
             this.recycleBinButton = new System.Windows.Forms.Button();
+            this.SidePanel = new System.Windows.Forms.Panel();
+            this.audiosButton = new System.Windows.Forms.Button();
             this.alarmsButton = new System.Windows.Forms.Button();
             this.imagesButton = new System.Windows.Forms.Button();
             this.videosButton = new System.Windows.Forms.Button();
@@ -45,22 +46,23 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.homepage = new NoteTaker.Homepage();
             this.textNotesForm = new NoteTaker.TextNotesForm();
             this.videosForm = new NoteTaker.VideosForm();
             this.alarmsForm = new NoteTaker.AlarmsForm();
             this.recycleBinForm = new NoteTaker.RecycleBinForm();
             this.imagesForm = new NoteTaker.ImagesForm();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.recycleBinButton);
+            this.panel1.Controls.Add(this.SidePanel);
+            this.panel1.Controls.Add(this.audiosButton);
             this.panel1.Controls.Add(this.alarmsButton);
             this.panel1.Controls.Add(this.imagesButton);
             this.panel1.Controls.Add(this.videosButton);
@@ -70,8 +72,25 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(209, 583);
+            this.panel1.Size = new System.Drawing.Size(209, 580);
             this.panel1.TabIndex = 0;
+            // 
+            // recycleBinButton
+            // 
+            this.recycleBinButton.FlatAppearance.BorderSize = 0;
+            this.recycleBinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.recycleBinButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recycleBinButton.ForeColor = System.Drawing.Color.White;
+            this.recycleBinButton.Image = ((System.Drawing.Image)(resources.GetObject("recycleBinButton.Image")));
+            this.recycleBinButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.recycleBinButton.Location = new System.Drawing.Point(10, 401);
+            this.recycleBinButton.Name = "recycleBinButton";
+            this.recycleBinButton.Size = new System.Drawing.Size(197, 54);
+            this.recycleBinButton.TabIndex = 5;
+            this.recycleBinButton.Text = "     Recycle Bin";
+            this.recycleBinButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.recycleBinButton.UseVisualStyleBackColor = true;
+            this.recycleBinButton.Click += new System.EventHandler(this.recycleBinB_Click);
             // 
             // SidePanel
             // 
@@ -82,22 +101,22 @@
             this.SidePanel.TabIndex = 4;
             this.SidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SidePanel_Paint);
             // 
-            // recycleBinButton
+            // audiosButton
             // 
-            this.recycleBinButton.FlatAppearance.BorderSize = 0;
-            this.recycleBinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.recycleBinButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recycleBinButton.ForeColor = System.Drawing.Color.White;
-            this.recycleBinButton.Image = ((System.Drawing.Image)(resources.GetObject("recycleBinButton.Image")));
-            this.recycleBinButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recycleBinButton.Location = new System.Drawing.Point(10, 343);
-            this.recycleBinButton.Name = "recycleBinButton";
-            this.recycleBinButton.Size = new System.Drawing.Size(197, 54);
-            this.recycleBinButton.TabIndex = 4;
-            this.recycleBinButton.Text = "     Recycle Bin";
-            this.recycleBinButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.recycleBinButton.UseVisualStyleBackColor = true;
-            this.recycleBinButton.Click += new System.EventHandler(this.recycleBinB_Click);
+            this.audiosButton.FlatAppearance.BorderSize = 0;
+            this.audiosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.audiosButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.audiosButton.ForeColor = System.Drawing.Color.White;
+            this.audiosButton.Image = ((System.Drawing.Image)(resources.GetObject("audiosButton.Image")));
+            this.audiosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.audiosButton.Location = new System.Drawing.Point(10, 227);
+            this.audiosButton.Name = "audiosButton";
+            this.audiosButton.Size = new System.Drawing.Size(197, 54);
+            this.audiosButton.TabIndex = 4;
+            this.audiosButton.Text = "        Audious";
+            this.audiosButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.audiosButton.UseVisualStyleBackColor = true;
+            this.audiosButton.Click += new System.EventHandler(this.audiosB_Click);
             // 
             // alarmsButton
             // 
@@ -107,7 +126,7 @@
             this.alarmsButton.ForeColor = System.Drawing.Color.White;
             this.alarmsButton.Image = ((System.Drawing.Image)(resources.GetObject("alarmsButton.Image")));
             this.alarmsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.alarmsButton.Location = new System.Drawing.Point(10, 287);
+            this.alarmsButton.Location = new System.Drawing.Point(10, 345);
             this.alarmsButton.Name = "alarmsButton";
             this.alarmsButton.Size = new System.Drawing.Size(197, 54);
             this.alarmsButton.TabIndex = 4;
@@ -124,11 +143,11 @@
             this.imagesButton.ForeColor = System.Drawing.Color.White;
             this.imagesButton.Image = ((System.Drawing.Image)(resources.GetObject("imagesButton.Image")));
             this.imagesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.imagesButton.Location = new System.Drawing.Point(10, 226);
+            this.imagesButton.Location = new System.Drawing.Point(10, 285);
             this.imagesButton.Name = "imagesButton";
             this.imagesButton.Size = new System.Drawing.Size(197, 57);
             this.imagesButton.TabIndex = 4;
-            this.imagesButton.Text = "        Images";
+            this.imagesButton.Text = "   Screenshotes";
             this.imagesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.imagesButton.UseVisualStyleBackColor = true;
             this.imagesButton.Click += new System.EventHandler(this.imagesB_Click);
@@ -205,7 +224,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(209, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(817, 10);
+            this.panel2.Size = new System.Drawing.Size(815, 10);
             this.panel2.TabIndex = 1;
             // 
             // label4
@@ -294,26 +313,40 @@
             this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button12.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // closeButton
             // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(977, 19);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(32, 35);
-            this.button13.TabIndex = 4;
-            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button13.UseVisualStyleBackColor = true;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.closeButton.Location = new System.Drawing.Point(977, 19);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(32, 35);
+            this.closeButton.TabIndex = 4;
+            this.closeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeB_Click);
+            // 
+            // label1
+            // 
+            this.label1.AllowDrop = true;
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.Location = new System.Drawing.Point(252, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Memo Mate";
             // 
             // homepage
             // 
-            this.homepage.Location = new System.Drawing.Point(209, 156);
+            this.homepage.Location = new System.Drawing.Point(209, 61);
             this.homepage.Name = "homepage";
-            this.homepage.Size = new System.Drawing.Size(805, 423);
+            this.homepage.Size = new System.Drawing.Size(817, 519);
             this.homepage.TabIndex = 5;
             // 
             // textNotesForm
@@ -351,28 +384,14 @@
             this.imagesForm.Size = new System.Drawing.Size(733, 425);
             this.imagesForm.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AllowDrop = true;
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label1.Location = new System.Drawing.Point(252, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Memo Mate";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 583);
+            this.ClientSize = new System.Drawing.Size(1024, 580);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.homepage);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button13);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -380,6 +399,7 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.homepage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -398,16 +418,17 @@
         private System.Windows.Forms.Button alarmsButton;
         private System.Windows.Forms.Button textNotsButton;
         private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Button recycleBinButton;
+        private System.Windows.Forms.Button audiosButton;
         private System.Windows.Forms.Button imagesButton;
         private System.Windows.Forms.Button videosButton;
+        private System.Windows.Forms.Button recycleBinButton;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private Homepage homepage;
