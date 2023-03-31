@@ -57,6 +57,12 @@ namespace NoteTaker
             SidePanel.Top = recycleBinButton.Top;
             recycleBinForm.BringToFront();
         }
+        private void audiosB_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = audiosButton.Height;
+            SidePanel.Top = audiosButton.Top;
+            recycleBinForm.BringToFront();
+        }
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -66,6 +72,11 @@ namespace NoteTaker
         private void SidePanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void closeB_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
