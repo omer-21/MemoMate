@@ -17,13 +17,20 @@ namespace NoteTaker
             InitializeComponent();
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
-            homepage.BringToFront();
+            //textNotesForm = null;
         }
 
         private void homepageB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
+            SidePanel.Top = textNotsButton.Top;
+            if (homepage  == null)
+            {
+                homepage = new Homepage();
+                homepage.Location = new Point(210, 50);
+                this.Controls.Add(homepage);
+            }
             homepage.BringToFront();
         }
 
@@ -31,37 +38,45 @@ namespace NoteTaker
         {
             SidePanel.Height = textNotsButton.Height;
             SidePanel.Top = textNotsButton.Top;
-            textNotesForm.BringToFront();
+            /*if (editEntryForm == null)
+            {
+                editEntryForm = new EditEntryForm();
+                //textNotesForm.Dock=DockStyle.Fill;
+                //editEntryForm.Location = new Point(10, 10);
+                this.Controls.Add(editEntryForm);
+            }
+            editEntryForm.BringToFront();*/
+            active.Visible = true;
+            active.Top = textNotsButton.Top;
+            IndexForm.home = false;
+            Loadform(new IndexForm());
+            Loadform(new IndexForm());
+
         }
         private void imagesB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = imagesButton.Height;
             SidePanel.Top = imagesButton.Top;
-            imagesForm.BringToFront();
         }
         private void videosB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = videosButton.Height;
             SidePanel.Top = videosButton.Top;
-            videosForm.BringToFront();
         }
         private void alarmsB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = alarmsButton.Height;
             SidePanel.Top = alarmsButton.Top;
-            alarmsForm.BringToFront();
         }
         private void recycleBinB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = recycleBinButton.Height;
             SidePanel.Top = recycleBinButton.Top;
-            recycleBinForm.BringToFront();
         }
         private void audiosB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = audiosButton.Height;
             SidePanel.Top = audiosButton.Top;
-            recycleBinForm.BringToFront();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -78,5 +93,19 @@ namespace NoteTaker
         {
             Application.Exit();
         }
+        public void Loadform(object Form)
+        {
+            if (this.childPanel.Controls.Count > 0)
+                this.childPanel.Controls.RemoveAt(0);
+            UserControl f = Form as UserControl;
+            //f.TopLevel = false;
+            //f.Dock = DockStyle.Fill;
+            this.childPanel.Controls.Add(f);
+            this.childPanel.Tag = f;
+            f.Location = new Point(10,10);
+            f.BringToFront();
+            //f.Show();
+        }
+
     }
 }
