@@ -13,22 +13,20 @@ namespace NoteTaker
     {
         private List<NoteEntry> notes;
 
-        public NotesManager()
+        public NotesManager(string filepath)
         {
             notes = new List<NoteEntry>();
-            LoadNotesFromFile(@"C:\Users\Omar\Desktop\Notes.json");
+            LoadNotesFromFile(filepath);
         }
         public void AddNote(string noteName,DateTime date, string input, Font font, Color color,int size)
         {
             NoteEntry note=new NoteEntry(noteName, date, input,font, color,size);
             notes.Add(note);
-            //SaveNotesToFile(@"C:\Users\Omar\Desktop\Notes.json");
         }
         public void RemoveNote(int noteId)
         {
             int index = notes.FindIndex(o => o.Id == noteId);
             notes.RemoveAt(index);
-            //SaveNotesToFile(@"C:\Users\Omar\Desktop\Notes.json");
         }
         public void EditNote(int noteId,string newName,string newText, Font font,Color color,int size)
         {

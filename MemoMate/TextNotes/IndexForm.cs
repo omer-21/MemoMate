@@ -16,7 +16,7 @@ namespace NoteTaker
         private NotesManager notesManager;
 
         public static bool home = true;
-        public string filePath = @"C:\Users\Omar\Desktop\Notes.json";
+        public string filePath = @"C:\Users\default\Documents\Notes.json";
         public static IndexForm Instance
         {
             get
@@ -34,21 +34,7 @@ namespace NoteTaker
         private IndexForm()
         {
             InitializeComponent();
-            notesManager = new NotesManager();
-            // Initialize noteEntries list
-            //noteEntries = new List<NoteEntry>();
-
-            // Add some example notes
-            /*
-            noteEntries.Add(new NoteEntry { Name = "Note 1", Date = new DateTime(2023, 5, 15), Text = "This is an example of note texts,Example1" });
-            noteEntries.Add(new NoteEntry { Name = "Note 2", Date = new DateTime(2023, 5, 16), Text = "This is an example of note texts,Example2(aoiejofjoeijfeoifjeoijfoja;kjmainpaiejfaiojsieojfoaefja)ewfwefwefefwefew" });
-            noteEntries.Add(new NoteEntry { Name = "Note 3", Date = new DateTime(2023, 5, 17), Text = "This is an example of note texts,Example3(aoiejofjoeijfeoifjeoijfoja;kjmainpaiejfaiojsieojfoaefja)feeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwww" });
-            noteEntries.Add(new NoteEntry { Name = "Note 3", Date = new DateTime(2023, 5, 17), Text = "This is an example of note texts,Example3(aoiejofjoeijfeoifjeoijfoja;kjmainpaiejfaiojsieojfoaefja)feeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwww" });
-            noteEntries.Add(new NoteEntry { Name = "Note 3", Date = new DateTime(2023, 5, 17), Text = "This is an example of note texts,Example3(aoiejofjoeijfeoifjeoijfoja;kjmainpaiejfaiojsieojfoaefja)feeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwww" });
-            */
-            //notesManager.AddNote("Note 3", new DateTime(2023, 5, 17), "This is an example of note texts");
-            //noteEntreyControls.Add(new NoteEntryControl());
-            // Display the notes
+            notesManager = new NotesManager(filePath);
             DisplayNoteEntries();
         }
 
