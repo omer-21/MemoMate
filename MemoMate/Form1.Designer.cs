@@ -1,4 +1,6 @@
-﻿namespace NoteTaker
+﻿using System.Windows.Forms;
+
+namespace NoteTaker
 {
     partial class Form1
     {
@@ -39,6 +41,8 @@
             this.button14 = new System.Windows.Forms.Button();
             this.textNotsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.active = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
@@ -47,13 +51,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.homepage = new NoteTaker.Homepage();
-            this.textNotesForm = new NoteTaker.TextNotesForm();
-            this.videosForm = new NoteTaker.VideosForm();
-            this.alarmsForm = new NoteTaker.AlarmsForm();
-            this.recycleBinForm = new NoteTaker.RecycleBinForm();
-            this.imagesForm = new NoteTaker.ImagesForm();
+            this.childPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,6 +216,28 @@
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homepageB_Click);
             // 
+            // active
+            // 
+            this.active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(137)))), ((int)(((byte)(130)))));
+            this.active.Location = new System.Drawing.Point(-1, 191);
+            this.active.Name = "active";
+            this.active.Size = new System.Drawing.Size(24, 69);
+            this.active.TabIndex = 13;
+            this.active.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AllowDrop = true;
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.Location = new System.Drawing.Point(252, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Memo Mate";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
@@ -329,66 +349,19 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeB_Click);
             // 
-            // label1
+            // childPanel
             // 
-            this.label1.AllowDrop = true;
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label1.Location = new System.Drawing.Point(252, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Memo Mate";
-            // 
-            // homepage
-            // 
-            this.homepage.Location = new System.Drawing.Point(209, 61);
-            this.homepage.Name = "homepage";
-            this.homepage.Size = new System.Drawing.Size(817, 519);
-            this.homepage.TabIndex = 5;
-            // 
-            // textNotesForm
-            // 
-            this.textNotesForm.Location = new System.Drawing.Point(215, 156);
-            this.textNotesForm.Name = "textNotesForm";
-            this.textNotesForm.Size = new System.Drawing.Size(818, 406);
-            this.textNotesForm.TabIndex = 6;
-            // 
-            // videosForm
-            // 
-            this.videosForm.Location = new System.Drawing.Point(0, 0);
-            this.videosForm.Name = "videosForm";
-            this.videosForm.Size = new System.Drawing.Size(773, 412);
-            this.videosForm.TabIndex = 0;
-            // 
-            // alarmsForm
-            // 
-            this.alarmsForm.Location = new System.Drawing.Point(0, 0);
-            this.alarmsForm.Name = "alarmsForm";
-            this.alarmsForm.Size = new System.Drawing.Size(695, 422);
-            this.alarmsForm.TabIndex = 0;
-            // 
-            // recycleBinForm
-            // 
-            this.recycleBinForm.Location = new System.Drawing.Point(0, 0);
-            this.recycleBinForm.Name = "recycleBinForm";
-            this.recycleBinForm.Size = new System.Drawing.Size(783, 465);
-            this.recycleBinForm.TabIndex = 0;
-            // 
-            // imagesForm
-            // 
-            this.imagesForm.Location = new System.Drawing.Point(0, 0);
-            this.imagesForm.Name = "imagesForm";
-            this.imagesForm.Size = new System.Drawing.Size(733, 425);
-            this.imagesForm.TabIndex = 0;
+            this.childPanel.Location = new System.Drawing.Point(210, 54);
+            this.childPanel.Name = "childPanel";
+            this.childPanel.Size = new System.Drawing.Size(815, 520);
+            this.childPanel.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 580);
+            this.Controls.Add(this.childPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.closeButton);
@@ -399,7 +372,6 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.homepage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -432,11 +404,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private Homepage homepage;
-        private TextNotesForm textNotesForm;
-        private VideosForm videosForm;
-        private ImagesForm imagesForm;
-        private AlarmsForm alarmsForm;
-        private RecycleBinForm recycleBinForm;
+        private IndexForm editEntryForm;
+        private Panel active;
+        private Panel childPanel;
     }
 }
 
