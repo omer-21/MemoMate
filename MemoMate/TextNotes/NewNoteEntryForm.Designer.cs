@@ -35,6 +35,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbFont = new System.Windows.Forms.ComboBox();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.numSize = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numSize)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNoteName
@@ -46,11 +50,12 @@
             // 
             // txtNoteText
             // 
-            this.txtNoteText.Location = new System.Drawing.Point(12, 101);
+            this.txtNoteText.Location = new System.Drawing.Point(12, 103);
             this.txtNoteText.Multiline = true;
             this.txtNoteText.Name = "txtNoteText";
             this.txtNoteText.Size = new System.Drawing.Size(406, 242);
             this.txtNoteText.TabIndex = 1;
+            this.txtNoteText.TextChanged += new System.EventHandler(this.txtNoteText_TextChanged);
             // 
             // btnSave
             // 
@@ -94,6 +99,36 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Note Name:";
             // 
+            // cmbFont
+            // 
+            this.cmbFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFont.FormattingEnabled = true;
+            this.cmbFont.Location = new System.Drawing.Point(66, 362);
+            this.cmbFont.Name = "cmbFont";
+            this.cmbFont.Size = new System.Drawing.Size(68, 21);
+            this.cmbFont.TabIndex = 4;
+            this.cmbFont.SelectedIndexChanged += new System.EventHandler(this.cmbFont_SelectedIndexChanged);
+            // Inside the InitializeComponent() method
+            // 
+            // btnColor
+            // 
+            this.btnColor.Location = new System.Drawing.Point(140, 360);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(78, 23);
+            this.btnColor.TabIndex = 5;
+            this.btnColor.Text = "Select Color";
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // numSize
+            // 
+            this.numSize.Location = new System.Drawing.Point(12, 363);
+            this.numSize.Name = "numSize";
+            this.numSize.Size = new System.Drawing.Size(48, 20);
+            this.numSize.TabIndex = 6;
+            this.numSize.Value = 14;
+            this.numSize.ValueChanged += new System.EventHandler(this.numSize_ValueChanged);
+            // 
             // NewNoteEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,12 +140,16 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtNoteText);
             this.Controls.Add(this.txtNoteName);
+            this.Controls.Add(this.cmbFont);
+            this.Controls.Add(this.btnColor);
+            this.Controls.Add(this.numSize);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewNoteEntryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Note";
+            ((System.ComponentModel.ISupportInitialize)(this.numSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +162,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbFont;
+        private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.NumericUpDown numSize;
     }
 }
 

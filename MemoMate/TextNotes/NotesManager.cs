@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace NoteTaker
 {
@@ -17,29 +18,26 @@ namespace NoteTaker
             notes = new List<NoteEntry>();
             LoadNotesFromFile(@"C:\Users\Omar\Desktop\Notes.json");
         }
-        public void AddNote(string noteName,DateTime date, string input)
+        public void AddNote(string noteName,DateTime date, string input, Font font, Color color,int size)
         {
-            NoteEntry note=new NoteEntry(noteName, date, input);
+            NoteEntry note=new NoteEntry(noteName, date, input,font, color,size);
             notes.Add(note);
-            //SaveNotesToFile(@"C:\Users\Omar\Desktop\Notes.json");
-        }
-
-        public void RemoveNote(NoteEntry note)
-        {
-            notes.Remove(note);
             //SaveNotesToFile(@"C:\Users\Omar\Desktop\Notes.json");
         }
         public void RemoveNote(int noteId)
         {
-            NoteEntry obj = notes.FirstOrDefault(o => o.Id == noteId);
-            notes.Remove(obj);
+            int index = notes.FindIndex(o => o.Id == noteId);
+            notes.RemoveAt(index);
             //SaveNotesToFile(@"C:\Users\Omar\Desktop\Notes.json");
         }
-        public void EditNote(int noteId,string newName,string newText) 
+        public void EditNote(int noteId,string newName,string newText, Font font,Color color,int size)
         {
             NoteEntry obj = notes.FirstOrDefault(o => o.Id == noteId);
             notes.Find(o => o.Id == noteId).Name = newName;
             notes.Find(o => o.Id == noteId).Text=newText;
+            notes.Find(o => o.Id == noteId).Color=color;
+            notes.Find(o => o.Id == noteId).Font=font;
+            notes.Find(o => o.Id == noteId).Size = size;
         }
         public List<NoteEntry> GetAllNotes()
         {

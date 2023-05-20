@@ -14,7 +14,7 @@ namespace NoteTaker
     {
         private static IndexForm instance;
         private NotesManager notesManager;
-        private List<NoteEntryControl> noteEntreyControls; 
+
         public static bool home = true;
         public string filePath = @"C:\Users\Omar\Desktop\Notes.json";
         public static IndexForm Instance
@@ -76,7 +76,10 @@ namespace NoteTaker
                     // Retrieve the entered values from the NewNoteForm
                     string noteName = newNoteForm.NoteName;
                     string noteText = newNoteForm.NoteText;
-                    notesManager.AddNote(noteName, DateTime.Now,noteText);
+                    Font font = newNoteForm.SelectedFont;
+                    Color color = newNoteForm.SelectedColor;
+                    int size = newNoteForm.SelectedSize;
+                    notesManager.AddNote(noteName, DateTime.Now,noteText,font, color,size);
                     // Save the notes to the file
                     notesManager.SaveNotesToFile(filePath);
                 }
@@ -121,7 +124,7 @@ namespace NoteTaker
             // Add a NoteEntryControl for each note in noteEntries
             foreach (NoteEntry note in notesManager.GetAllNotes())
             {
-                NoteEntryControl noteEntryControl = new NoteEntryControl(note.Name, note.Date, note.Text, note.Id);
+                NoteEntryControl noteEntryControl = new NoteEntryControl(note.Name, note.Date, note.Text, note.Id,note.Font,note.Color);
                 noteEntryControl.EditButtonClicked += NoteEntryControl_EditButtonClicked;
                 noteEntryControl.DeleteButtonClicked += NoteEntryControl_DeleteButtonClicked;
                 flowLayoutPanel1.Controls.Add(noteEntryControl);
@@ -142,20 +145,14 @@ namespace NoteTaker
             if (note != null)
             {
                 // Create an instance of NoteEditForm and pass the existing note details
-                EditNoteEntryForm editForm = new EditNoteEntryForm(note.Name, note.Text);
+                EditNoteEntryForm editForm = new EditNoteEntryForm(note.Name, note.Text,note.Font,note.Color);
 
                 // Display the edit form and check the result
                 DialogResult result = editForm.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    // Retrieve the updated note details
-                    string updatedNoteName = editForm.NoteName;
-                    string updatedNoteText = editForm.NoteText;
-
-                    notesManager.EditNote(noteId,updatedNoteName, updatedNoteText);
-                    // Perform any additional actions with the updated note
-                    // ...
+                    notesManager.EditNote(noteId,editForm.NoteName, editForm.NoteText, editForm.SelectedFont,editForm.SelectedColor,editForm.SelectedSize);
                 }
             }
             notesManager.SaveNotesToFile(filePath);
@@ -181,4 +178,3 @@ namespace NoteTaker
     }
 
 }
-

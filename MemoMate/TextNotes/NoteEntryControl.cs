@@ -12,13 +12,16 @@ namespace NoteTaker
         public event EventHandler LargeViewRequested;
         private int Id;
         private static int counter=0;
+        
         //public NoteEntry Note;
-        public NoteEntryControl(string noteName,DateTime date,string noteText,int Id)
+        public NoteEntryControl(string noteName,DateTime date,string noteText,int Id,Font font,Color color)
         {
             InitializeComponent();
             this.lblNoteName.Text= noteName;
             this.lblDate.Text = date.ToShortDateString();
             this.txtNote.Text= noteText;
+            this.txtNote.Font = font;
+            this.txtNote.ForeColor = color;
             this.Id=Id;
             counter++;
         }
@@ -47,10 +50,6 @@ namespace NoteTaker
         {
             // Raise the DeleteButtonClicked event
             DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
-        }
-        public string GetNoteName()
-        {
-            return lblNoteName.Text;
         }
     }
 }

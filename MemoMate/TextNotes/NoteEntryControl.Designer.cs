@@ -93,7 +93,7 @@
             this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNote.Size = new System.Drawing.Size(200, 68);
             this.txtNote.TabIndex = 4;
-            // 
+                        // 
             // NoteEntryControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -109,16 +109,13 @@
             this.Size = new System.Drawing.Size(218, 142);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label lblNoteName;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
-
     }
 }
 
