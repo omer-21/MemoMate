@@ -147,10 +147,9 @@ namespace NoteTaker
             NoteEntryControl noteEntryControl = (NoteEntryControl)sender;
 
             // Find the NoteEntry associated with the clicked NoteEntryControl
-            NoteEntry note = notesManager.GetAllNotes().Find(n => n.Name== noteEntryControl.NoteName && n.Date.ToShortDateString() == noteEntryControl.Date);
 
             // Remove the note entry
-            notesManager.RemoveNote(note);
+            notesManager.RemoveNote(noteEntryControl.GetId());
 
             // Redisplay the note entries
             DisplayNoteEntries();
