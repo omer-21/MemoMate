@@ -405,10 +405,6 @@ namespace NoteTaker
         private System.Windows.Forms.Label label1;
         private Homepage homepage;
         private IndexForm editEntryForm;
-        private VideosForm videosForm;
-        private ImagesForm imagesForm;
-        private AlarmsForm alarmsForm;
-        private RecycleBinForm recycleBinForm;
         private Panel active;
         private Panel childPanel;
     }

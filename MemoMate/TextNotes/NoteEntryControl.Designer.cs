@@ -1,7 +1,4 @@
-﻿using System.Drawing;
-using System;
-
-namespace NoteTaker
+﻿namespace NoteTaker
 {
     partial class NoteEntryControl
     {
@@ -36,16 +33,11 @@ namespace NoteTaker
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtNote = new System.Windows.Forms.TextBox();
-            NoteEntry note = this.Note;
-            //NoteEntryControl noteEntryControl = new NoteEntryControl();
             this.SuspendLayout();
             // 
             // lblNoteName
             // 
             this.lblNoteName.AutoSize = true;
-            this.lblNoteName.Text = note.Name;
-            //this.lblNoteName.Text = note.Name;
-            //this.lblNoteName.Text = noteEntryControl.Note.Name;
             this.lblNoteName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNoteName.Location = new System.Drawing.Point(10, 10);
             this.lblNoteName.Name = "lblNoteName";
@@ -55,48 +47,52 @@ namespace NoteTaker
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Text = note.Date.ToShortDateString();
-            //this.lblDate.Text = note.Date.ToShortDateString();
-            //this.lblDate.Text = noteEntryControl.Note.Date.ToShortDateString();
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblDate.Location = new System.Drawing.Point(10, 40);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(0, 15);
             this.lblDate.TabIndex = 1;
-            //
-            // txtNote
-            //
-            this.txtNote.Location = new System.Drawing.Point(10, 60);
-            this.txtNote.Text = note.Text;
-            //this.txtNote.Text = note.Text;
-            //this.txtNote.Text = noteEntryControl.Note.Text;
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNote.Size = new System.Drawing.Size(200, 68);
-            this.txtNote.TabIndex = 4;
-            //this.txtNote.Disposed += new System.EventHandler(this.txtNote_TextChanged);
-            this.txtNote.TextChanged += new System.EventHandler(this.txtNote_TextChanged);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.Lavender;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnDelete.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDelete.Location = new System.Drawing.Point(161, 33);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(49, 21);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.Lavender;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnEdit.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnEdit.Location = new System.Drawing.Point(106, 33);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(49, 21);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // txtNote
+            // 
+            this.txtNote.BackColor = System.Drawing.Color.White;
+            this.txtNote.Location = new System.Drawing.Point(10, 60);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.ReadOnly = true;
+            this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtNote.Size = new System.Drawing.Size(200, 68);
+            this.txtNote.TabIndex = 4;
             // 
             // NoteEntryControl
             // 
@@ -111,7 +107,6 @@ namespace NoteTaker
             this.ForeColor = System.Drawing.Color.DarkBlue;
             this.Name = "NoteEntryControl";
             this.Size = new System.Drawing.Size(218, 142);
-            this.Resize += new System.EventHandler(this.NoteEntryControl_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +118,7 @@ namespace NoteTaker
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
+
     }
 }
 

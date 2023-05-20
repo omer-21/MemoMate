@@ -24,34 +24,17 @@ namespace NoteTaker
         {
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
-            SidePanel.Top = textNotsButton.Top;
-            if (homepage  == null)
-            {
-                homepage = new Homepage();
-                homepage.Location = new Point(210, 50);
-                this.Controls.Add(homepage);
-            }
-            homepage.BringToFront();
         }
 
         private void textNotesB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = textNotsButton.Height;
             SidePanel.Top = textNotsButton.Top;
-            /*if (editEntryForm == null)
-            {
-                editEntryForm = new EditEntryForm();
-                //textNotesForm.Dock=DockStyle.Fill;
-                //editEntryForm.Location = new Point(10, 10);
-                this.Controls.Add(editEntryForm);
-            }
-            editEntryForm.BringToFront();*/
             active.Visible = true;
             active.Top = textNotsButton.Top;
             IndexForm.home = false;
-            Loadform(new IndexForm());
-            Loadform(new IndexForm());
-
+            IndexForm instance = IndexForm.Instance;
+            Loadform(instance);
         }
         private void imagesB_Click(object sender, EventArgs e)
         {

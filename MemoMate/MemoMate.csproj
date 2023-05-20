@@ -54,18 +54,6 @@
     <Compile Include="AlarmsForm.Designer.cs">
       <DependentUpon>AlarmsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddEntryForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AddEntryForm.Designer.cs">
-      <DependentUpon>AddEntryForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditEntryForm2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="EditEntryForm2.Designer.cs">
-      <DependentUpon>EditEntryForm2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Homepage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,20 +72,32 @@
     <Compile Include="ImagesForm.Designer.cs">
       <DependentUpon>ImagesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IndexForm.cs">
+    <Compile Include="TextNotes\IndexForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="IndexForm.Designer.cs">
+    <Compile Include="TextNotes\IndexForm.Designer.cs">
       <DependentUpon>IndexForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NoteEntry.cs" />
-    <Compile Include="NoteEntryControl.cs">
+    <Compile Include="TextNotes\EditNoteEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextNotes\EditNoteEntryForm.Designer.cs">
+      <DependentUpon>EditNoteEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextNotes\NewNoteEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextNotes\NewNoteEntryForm.Designer.cs">
+      <DependentUpon>NewNoteEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextNotes\NoteEntry.cs" />
+    <Compile Include="TextNotes\NoteEntryControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NoteEntryControl.Designer.cs">
+    <Compile Include="TextNotes\NoteEntryControl.Designer.cs">
       <DependentUpon>NoteEntryControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotesManager.cs" />
+    <Compile Include="TextNotes\NotesManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecycleBinForm.cs">
@@ -106,18 +106,11 @@
     <Compile Include="RecycleBinForm.Designer.cs">
       <DependentUpon>RecycleBinForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NoteIndexingForm.cs">
+    <Compile Include="TextNotes\NoteIndexingForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NoteIndexingForm.Designer.cs">
+    <Compile Include="TextNotes\NoteIndexingForm.Designer.cs">
       <DependentUpon>NoteIndexingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Notes.cs" />
-    <Compile Include="EditEntryForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="EditEntryForm.Designer.cs">
-      <DependentUpon>EditEntryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TextNotesForm.cs">
       <SubType>UserControl</SubType>
@@ -125,7 +118,6 @@
     <Compile Include="TextNotesForm.Designer.cs">
       <DependentUpon>TextNotesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UUID.cs" />
     <Compile Include="VideosForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,12 +126,6 @@
     </Compile>
     <EmbeddedResource Include="AlarmsForm.resx">
       <DependentUpon>AlarmsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddEntryForm.resx">
-      <DependentUpon>AddEntryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditEntryForm2.resx">
-      <DependentUpon>EditEntryForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
@@ -150,10 +136,16 @@
     <EmbeddedResource Include="ImagesForm.resx">
       <DependentUpon>ImagesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IndexForm.resx">
+    <EmbeddedResource Include="TextNotes\IndexForm.resx">
       <DependentUpon>IndexForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NoteEntryControl.resx">
+    <EmbeddedResource Include="TextNotes\EditNoteEntryForm.resx">
+      <DependentUpon>EditNoteEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextNotes\NewNoteEntryForm.resx">
+      <DependentUpon>NewNoteEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextNotes\NoteEntryControl.resx">
       <DependentUpon>NoteEntryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -169,11 +161,8 @@
     <EmbeddedResource Include="RecycleBinForm.resx">
       <DependentUpon>RecycleBinForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NoteIndexingForm.resx">
+    <EmbeddedResource Include="TextNotes\NoteIndexingForm.resx">
       <DependentUpon>NoteIndexingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditEntryForm.resx">
-      <DependentUpon>EditEntryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextNotesForm.resx">
       <DependentUpon>TextNotesForm.cs</DependentUpon>
