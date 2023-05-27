@@ -100,8 +100,6 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.txtNote);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblNoteName);
             this.ForeColor = System.Drawing.Color.DarkBlue;

@@ -2,12 +2,10 @@
 {
     partial class EditNoteEntryForm
     {
-
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -20,9 +18,7 @@
             }
             base.Dispose(disposing);
         }
-
         #region Component Designer generated code
-
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -148,13 +144,10 @@
             this.Name = "EditNoteEntryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Note";
-            this.Load += new System.EventHandler(this.NoteEditForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
         private System.Windows.Forms.TextBox txtNoteName;
         private System.Windows.Forms.TextBox txtNoteText;
@@ -167,4 +160,3 @@
         private System.Windows.Forms.NumericUpDown numSize;
     }
 }
-

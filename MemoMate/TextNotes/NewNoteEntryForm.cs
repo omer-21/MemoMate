@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NoteTaker
@@ -19,24 +13,6 @@ namespace NoteTaker
         public Font SelectedFont { set; get; }
         public Color SelectedColor { set; get; }
         public int SelectedSize { set; get; }
-        // Property to access the selected font
-        /*public Font SelectedFont
-        {
-            get { return selectedFont; }
-        }
-
-        // Property to access the selected color
-        public Color SelectedColor
-        {
-            get { return selectedColor; }
-        }
-
-        // Property to access the selected size
-        public int SelectedSize
-        {
-            get { return selectedSize; }
-        }*/
-
         public NewNoteEntryForm()
         {
             InitializeComponent();
@@ -114,11 +90,6 @@ namespace NoteTaker
             if (cmbFont.SelectedItem != null && cmbFont.SelectedItem.ToString() == "Underline")
                 fontStyle |= FontStyle.Underline;
             return fontStyle;
-        }
-
-        private void txtNoteText_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void LoadFonts()
         {

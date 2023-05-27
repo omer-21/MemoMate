@@ -34,6 +34,7 @@ namespace NoteTaker
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IndexForm));
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@ namespace NoteTaker
             this.clearSearchButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDate = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // textBoxSearch
@@ -52,7 +54,8 @@ namespace NoteTaker
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(200, 30);
             this.textBoxSearch.TabIndex = 0;
-            this.textBoxSearch.Text = "Search the name";
+            this.textBoxSearch.GotFocus += new System.EventHandler(this.txtboxGFocus);
+            this.textBoxSearch.LostFocus += new System.EventHandler(this.txtboxLFocus);
             // 
             // searchButton
             // 
@@ -132,11 +135,15 @@ namespace NoteTaker
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblDate.Location = new System.Drawing.Point(618, 22);
+            this.lblDate.Location = new System.Drawing.Point(568, 18);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(85, 19);
+            this.lblDate.Size = new System.Drawing.Size(150, 19);
             this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "2023-05-17";
+            this.lblDate.Text = "5/27/2023 9:58:45 PM";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // IndexForm
             // 
@@ -165,5 +172,6 @@ namespace NoteTaker
         private Label lblDate;
 
         private FlowLayoutPanel flowLayoutPanel1;
+        private Timer timer1;
     }
 }

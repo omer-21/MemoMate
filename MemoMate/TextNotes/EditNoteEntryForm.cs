@@ -12,24 +12,19 @@ namespace NoteTaker
         public Font SelectedFont { get; set; }
         public Color SelectedColor { get; set; }
         public int SelectedSize { get; set; }
-
-        public EditNoteEntryForm(string noteName, string noteText,Font font,Color color)
+        public EditNoteEntryForm(string noteName, string noteText, Font font, Color color)
         {
             InitializeComponent();
             NoteName = noteName;
             NoteText = noteText;
             SelectedFont = new Font(font.FontFamily, font.Size, font.Style); // Create a new Font instance
-            SelectedColor= color;
+            SelectedColor = color;
             txtNoteName.Text = NoteName;
             txtNoteText.Text = NoteText;
             txtNoteText.Font = SelectedFont;
             txtNoteText.ForeColor = SelectedColor;
             this.LoadFonts();
         }
-        private void NoteEditForm_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (NoteName != "" && NoteText != "")

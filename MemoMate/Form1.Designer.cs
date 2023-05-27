@@ -97,7 +97,6 @@ namespace NoteTaker
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(10, 54);
             this.SidePanel.TabIndex = 4;
-            this.SidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SidePanel_Paint);
             // 
             // audiosButton
             // 
@@ -256,7 +255,6 @@ namespace NoteTaker
             this.label4.Size = new System.Drawing.Size(197, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Multi Choice Note Taker";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button8
             // 
@@ -379,11 +377,8 @@ namespace NoteTaker
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
-
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel SidePanel;

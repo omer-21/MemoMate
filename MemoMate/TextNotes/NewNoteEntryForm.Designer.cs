@@ -55,7 +55,6 @@
             this.txtNoteText.Name = "txtNoteText";
             this.txtNoteText.Size = new System.Drawing.Size(406, 242);
             this.txtNoteText.TabIndex = 1;
-            this.txtNoteText.TextChanged += new System.EventHandler(this.txtNoteText_TextChanged);
             // 
             // btnSave
             // 

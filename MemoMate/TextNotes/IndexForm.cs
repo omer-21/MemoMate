@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NoteTaker
@@ -14,9 +10,10 @@ namespace NoteTaker
     {
         private static IndexForm instance;
         private NotesManager notesManager;
-
+        private const string PlaceholderText = "Search Notes";
+        private bool isPlaceholderTextDisplayed = true;
         public static bool home = true;
-        public string filePath = @"C:\Users\default\Documents\Notes.json";
+        public string filePath = @"C:\Users\omar\Documents\Notes.json";
         public static IndexForm Instance
         {
             get
@@ -34,21 +31,22 @@ namespace NoteTaker
         private IndexForm()
         {
             InitializeComponent();
+            DisplayPlaceholderText();
             notesManager = new NotesManager(filePath);
             DisplayNoteEntries();
+            timer1.Start();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
             string searchQuery = textBoxSearch.Text.Trim();
-
-            // Perform the search and update the display
-            SearchNotes(searchQuery);
+            if(this.textBoxSearch.Text!= PlaceholderText)
+                // Perform the search and update the display
+                SearchNotes(searchQuery);
         }
         private void clrSrchButtonButton_Click(object sender,EventArgs e)
         {
-            textBoxSearch.Text = string.Empty;
-
+            DisplayPlaceholderText();
             // Clear the search and display all notes
             ClearSearch();
         }
@@ -110,13 +108,15 @@ namespace NoteTaker
             // Add a NoteEntryControl for each note in noteEntries
             foreach (NoteEntry note in notesManager.GetAllNotes())
             {
-                NoteEntryControl noteEntryControl = new NoteEntryControl(note.Name, note.Date, note.Text, note.Id,note.Font,note.Color);
-                noteEntryControl.EditButtonClicked += NoteEntryControl_EditButtonClicked;
-                noteEntryControl.DeleteButtonClicked += NoteEntryControl_DeleteButtonClicked;
-                flowLayoutPanel1.Controls.Add(noteEntryControl);
+                if (note.IsDeleted == false)
+                {
+                    NoteEntryControl noteEntryControl = new NoteEntryControl(note.Name, note.Date, note.Text, note.Id, note.Font, note.Color,note.IsDeleted);
+                    noteEntryControl.EditButtonClicked += NoteEntryControl_EditButtonClicked;
+                    noteEntryControl.DeleteButtonClicked += NoteEntryControl_DeleteButtonClicked;
+                    flowLayoutPanel1.Controls.Add(noteEntryControl);
+                }
             }
         }
-
         private void NoteEntryControl_EditButtonClicked(object sender, EventArgs e)
         {
             // Handle edit button click
@@ -144,7 +144,6 @@ namespace NoteTaker
             notesManager.SaveNotesToFile(filePath);
             DisplayNoteEntries();
         }
-
         private void NoteEntryControl_DeleteButtonClicked(object sender, EventArgs e)
         {
             // Handle delete button click
@@ -156,11 +155,36 @@ namespace NoteTaker
             // Redisplay the note entries
             DisplayNoteEntries();
         }
+        private void txtboxGFocus(object sender,EventArgs e)
+        {
+                if (isPlaceholderTextDisplayed)
+                {
+                    this.textBoxSearch.Text = string.Empty;
+                    this.textBoxSearch.ForeColor = Color.Black;
+                    isPlaceholderTextDisplayed = false;
+                }
+        }
+        private void txtboxLFocus(object sender,EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.textBoxSearch.Text))
+            {
+                DisplayPlaceholderText();
+            }
+        }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             // Custom painting code for the flowLayoutPanel1
             Graphics graphics = e.Graphics;
         }
+        private void DisplayPlaceholderText()
+        {
+            this.textBoxSearch.Text = PlaceholderText;
+            this.textBoxSearch.ForeColor = Color.Gray;
+            isPlaceholderTextDisplayed = true;
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString();
+        }
     }
-
 }

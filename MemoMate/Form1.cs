@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NoteTaker
@@ -19,13 +13,11 @@ namespace NoteTaker
             SidePanel.Top = homeButton.Top;
             //textNotesForm = null;
         }
-
         private void homepageB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
         }
-
         private void textNotesB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = textNotsButton.Height;
@@ -55,23 +47,17 @@ namespace NoteTaker
         {
             SidePanel.Height = recycleBinButton.Height;
             SidePanel.Top = recycleBinButton.Top;
+            active.Visible = true;
+            active.Top = recycleBinButton.Top;
+            RecycleBinForm.home = false;
+            RecycleBinForm instance = RecycleBinForm.Instance;
+            Loadform(instance);
         }
         private void audiosB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = audiosButton.Height;
             SidePanel.Top = audiosButton.Top;
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SidePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void closeB_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -85,10 +71,9 @@ namespace NoteTaker
             //f.Dock = DockStyle.Fill;
             this.childPanel.Controls.Add(f);
             this.childPanel.Tag = f;
-            f.Location = new Point(10,10);
+            f.Location = new Point(10, 10);
             f.BringToFront();
             //f.Show();
         }
-
     }
 }
