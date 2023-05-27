@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NoteTaker
 {
@@ -9,12 +8,11 @@ namespace NoteTaker
     {
         public event EventHandler EditButtonClicked;
         public event EventHandler DeleteButtonClicked;
-        public event EventHandler LargeViewRequested;
         private int Id;
         private static int counter=0;
         
         //public NoteEntry Note;
-        public NoteEntryControl(string noteName,DateTime date,string noteText,int Id,Font font,Color color)
+        public NoteEntryControl(string noteName,DateTime date,string noteText,int Id,Font font,Color color,bool isDeletede)
         {
             InitializeComponent();
             this.lblNoteName.Text= noteName;
@@ -23,6 +21,7 @@ namespace NoteTaker
             this.txtNote.Font = font;
             this.txtNote.ForeColor = color;
             this.Id=Id;
+            if (!isDeletede) { buttonsView(); }
             counter++;
         }
         public int GetId()
@@ -50,6 +49,11 @@ namespace NoteTaker
         {
             // Raise the DeleteButtonClicked event
             DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+        private void buttonsView()
+        {
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
         }
     }
 }

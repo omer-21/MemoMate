@@ -12,7 +12,6 @@ namespace NoteTaker
     public class NotesManager
     {
         private List<NoteEntry> notes;
-
         public NotesManager(string filepath)
         {
             notes = new List<NoteEntry>();
@@ -25,12 +24,10 @@ namespace NoteTaker
         }
         public void RemoveNote(int noteId)
         {
-            int index = notes.FindIndex(o => o.Id == noteId);
-            notes.RemoveAt(index);
+            notes.Find(o => o.Id == noteId).IsDeleted = true;
         }
         public void EditNote(int noteId,string newName,string newText, Font font,Color color,int size)
         {
-            NoteEntry obj = notes.FirstOrDefault(o => o.Id == noteId);
             notes.Find(o => o.Id == noteId).Name = newName;
             notes.Find(o => o.Id == noteId).Text=newText;
             notes.Find(o => o.Id == noteId).Color=color;

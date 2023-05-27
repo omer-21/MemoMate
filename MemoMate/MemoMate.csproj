@@ -72,6 +72,12 @@
     <Compile Include="ImagesForm.Designer.cs">
       <DependentUpon>ImagesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextNotes\RecycleBinForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextNotes\RecycleBinForm.Designer.cs">
+      <DependentUpon>RecycleBinForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextNotes\IndexForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,23 +106,11 @@
     <Compile Include="TextNotes\NotesManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecycleBinForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RecycleBinForm.Designer.cs">
-      <DependentUpon>RecycleBinForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="TextNotes\NoteIndexingForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TextNotes\NoteIndexingForm.Designer.cs">
       <DependentUpon>NoteIndexingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TextNotesForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextNotesForm.Designer.cs">
-      <DependentUpon>TextNotesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VideosForm.cs">
       <SubType>UserControl</SubType>
@@ -132,12 +126,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ImagesForm.resx">
       <DependentUpon>ImagesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextNotes\RecycleBinForm.resx">
+      <DependentUpon>RecycleBinForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TextNotes\IndexForm.resx">
       <DependentUpon>IndexForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TextNotes\EditNoteEntryForm.resx">
       <DependentUpon>EditNoteEntryForm.cs</DependentUpon>
@@ -158,14 +157,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RecycleBinForm.resx">
-      <DependentUpon>RecycleBinForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TextNotes\NoteIndexingForm.resx">
       <DependentUpon>NoteIndexingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TextNotesForm.resx">
-      <DependentUpon>TextNotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VideosForm.resx">
       <DependentUpon>VideosForm.cs</DependentUpon>

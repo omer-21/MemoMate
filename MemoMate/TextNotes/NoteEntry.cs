@@ -16,6 +16,7 @@ namespace NoteTaker
         public Font Font { get; set; }
         public Color Color { get; set; }
         public int Size { get; set; }
+        public bool IsDeleted { get;set; }
         private static int idCounter = 0;
         public NoteEntry(string Name,DateTime Date, string Text, Font font, Color color,int size)
         {
@@ -26,6 +27,7 @@ namespace NoteTaker
             Color = color;
             Font = font;
             Size = size;
+            IsDeleted = false;
         }
     }
 }
