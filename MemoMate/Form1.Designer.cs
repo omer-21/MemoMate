@@ -144,7 +144,7 @@ namespace NoteTaker
             this.imagesButton.Name = "imagesButton";
             this.imagesButton.Size = new System.Drawing.Size(197, 57);
             this.imagesButton.TabIndex = 4;
-            this.imagesButton.Text = "   Screenshotes";
+            this.imagesButton.Text = "   Screenshots";
             this.imagesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.imagesButton.UseVisualStyleBackColor = true;
             this.imagesButton.Click += new System.EventHandler(this.imagesB_Click);
@@ -377,6 +377,7 @@ namespace NoteTaker
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         private System.Windows.Forms.Panel panel1;

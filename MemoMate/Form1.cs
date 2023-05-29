@@ -42,6 +42,11 @@ namespace NoteTaker
         {
             SidePanel.Height = alarmsButton.Height;
             SidePanel.Top = alarmsButton.Top;
+            active.Visible = true;
+            active.Top = alarmsButton.Top;
+            AlarmsForm.home = false;
+            AlarmsForm instance = AlarmsForm.Instance;
+            Loadform(instance);
         }
         private void recycleBinB_Click(object sender, EventArgs e)
         {
@@ -57,6 +62,11 @@ namespace NoteTaker
         {
             SidePanel.Height = audiosButton.Height;
             SidePanel.Top = audiosButton.Top;
+            active.Visible = true;
+            active.Top = audiosButton.Top;
+            AudiosForm.home = false;
+            AudiosForm instance = AudiosForm.Instance;
+            Loadform(instance);
         }
         private void closeB_Click(object sender, EventArgs e)
         {
