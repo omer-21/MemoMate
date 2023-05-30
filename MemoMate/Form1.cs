@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NoteTaker
 {
     public partial class Form1 : Form
     {
+        private Form frm2;
+        private PictureBox pictureBox1;
         public Form1()
         {
             InitializeComponent();
@@ -28,11 +32,79 @@ namespace NoteTaker
             IndexForm instance = IndexForm.Instance;
             Loadform(instance);
         }
+        //Screenshot codes:
+        //{
         private void imagesB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = imagesButton.Height;
             SidePanel.Top = imagesButton.Top;
+            this.Hide();
+            if (frm2 == null)
+            {
+                frm2 = CreateScreenshotForm();
+                pictureBox1 = CreatePictureBox();
+                Button btn = CreateCaptureButton();
+                frm2.Controls.Add(btn);
+                frm2.Controls.Add(pictureBox1);
+            }
+            frm2.Show();
         }
+        private Form CreateScreenshotForm()
+        {
+            Form form = new Form();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Size = new Size(702, 453);
+            return form;
+        }
+        private PictureBox CreatePictureBox()
+        {
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.Size = new Size(660, 315);
+            return pictureBox;
+        }
+        private Button CreateCaptureButton()
+        {
+            Button btn = new Button();
+            btn.Location = new Point(538, 353);
+            btn.Size = new Size(120, 41);
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.Cursor = Cursors.Hand;
+            btn.Text = "Capture";
+            btn.Click += Capture_click;
+            return btn;
+        }
+        private async void Capture_click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm2.Hide();
+            await Task.Delay(1000);
+            using (Bitmap screenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height))
+            {
+                using (Graphics graphics = Graphics.FromImage(screenshot))
+                {
+                    graphics.CopyFromScreen(0, 0, 0, 0, screenshot.Size);
+                }
+                pictureBox1.Image = screenshot;
+                frm2.Show();
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "PNG Image|*.png";
+                    saveFileDialog.Title = "Save Screenshot";
+                    saveFileDialog.InitialDirectory = @"C:\Your\Specific\Folder\"; // Set the specific folder path here
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = saveFileDialog.FileName;
+                        // Save the screenshot as PNG
+                        screenshot.Save(filePath, ImageFormat.Png);
+                        MessageBox.Show("Screenshot saved successfully!", "Screenshot App", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            this.Show();
+        }
+        //
+        //}
         private void videosB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = videosButton.Height;
